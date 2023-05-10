@@ -1,11 +1,11 @@
-name: Build on Strapi webhook
+name: Build on Strapi update
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
-  strapi:
-    types: [ entry.create ]
+  create_entry:
+    types: [entry.create]
 
 jobs:
   build:
@@ -16,9 +16,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Install dependencies
-      run: |
-        npm install
+      run: npm install
 
     - name: Build project
-      run: |
-        npm run build
+      run: npm run build
