@@ -1,12 +1,9 @@
 name: Build on Strapi update
 
 on:
-  push:
-    branches: [main]
-  workflow_dispatch:
-  create_entry:
-    types: [entry.create]
-
+  repository_dispatch:
+    types: [strapi_update]
+  
 jobs:
   build:
     runs-on: ubuntu-latest
